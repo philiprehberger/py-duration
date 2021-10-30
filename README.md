@@ -27,6 +27,27 @@ parse("2.5h")              # 9000.0
 parse("150m")              # 9000.0
 ```
 
+### ISO 8601 parsing
+
+```python
+from philiprehberger_duration import parse
+
+parse("PT2H30M")           # 9000.0
+parse("P1DT12H")           # 129600.0
+parse("PT1M30S")           # 90.0
+parse("PT0.5S")            # 0.5
+```
+
+### Colon format parsing
+
+```python
+from philiprehberger_duration import parse
+
+parse("1:30:00")           # 5400.0
+parse("1:05")              # 65.0
+parse("1:05:30.500")       # 3930.5
+```
+
 ### Formatting seconds
 
 ```python
@@ -51,6 +72,14 @@ d.minutes  # 30
 # Arithmetic
 d2 = d + Duration(minutes=15)
 d3 = d * 2
+d4 = d - Duration(minutes=10)
+d5 = d / 2
+d6 = d // 3
+
+# Comparisons
+Duration.from_seconds(60) < Duration.from_seconds(120)   # True
+Duration.from_seconds(60) == Duration(minutes=1)          # True
+Duration(hours=1) >= Duration(minutes=30)                 # True
 
 # Convert to timedelta
 td = d.to_timedelta()
@@ -74,7 +103,8 @@ td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
 |---|---|
 | `parse(s: str) -> float` | Parse a human-readable duration string to seconds. |
 | `format(seconds: float, *, style: str = "short") -> str` | Format seconds to a human-readable string. Styles: `"short"`, `"long"`, `"colon"`, `"iso"`. |
-| `Duration` | Dataclass with fields: `weeks`, `days`, `hours`, `minutes`, `seconds`, `milliseconds`. |
+| `parse(s: str) -> float` | Also accepts ISO 8601 (`"PT2H30M"`) and colon format (`"1:30:00"`). |
+| `Duration` | Dataclass with fields: `weeks`, `days`, `hours`, `minutes`, `seconds`, `milliseconds`, `microseconds`. |
 | `Duration.total_seconds() -> float` | Return total duration in seconds. |
 | `Duration.to_timedelta() -> datetime.timedelta` | Convert to a `timedelta` object. |
 | `Duration.from_seconds(s: float) -> Duration` | Create a `Duration` from seconds. |
@@ -89,6 +119,7 @@ td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
 | Minutes | `m`, `min`, `mins`, `minute`, `minutes` |
 | Seconds | `s`, `sec`, `secs`, `second`, `seconds` |
 | Milliseconds | `ms`, `millisecond`, `milliseconds` |
+| Microseconds | `us`, `μs`, `microsecond`, `microseconds` |
 
 
 ## Development
