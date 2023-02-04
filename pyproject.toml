@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-duration"
-version = "0.2.0"
+version = "0.2.1"
 description = "Parse and format human-readable duration strings like \"2h30m\" or \"1 day, 3 hours\""
 readme = "README.md"
 license = "MIT"
@@ -31,3 +31,9 @@ Changelog = "https://github.com/philiprehberger/py-duration/blob/main/CHANGELOG.
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/philiprehberger_duration"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
