@@ -2,8 +2,7 @@
 
 [![Tests](https://github.com/philiprehberger/py-duration/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-duration/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-duration.svg)](https://pypi.org/project/philiprehberger-duration/)
-[![License](https://img.shields.io/github/license/philiprehberger/py-duration)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-duration)](https://github.com/philiprehberger/py-duration/commits/main)
 
 Parse and format human-readable duration strings like "2h30m" or "1 day, 3 hours".
 
@@ -122,7 +121,6 @@ td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
 | Milliseconds | `ms`, `millisecond`, `milliseconds` |
 | Microseconds | `us`, `μs`, `microsecond`, `microseconds` |
 
-
 ## Development
 
 ```bash
@@ -130,6 +128,24 @@ pip install -e .
 python -m pytest tests/ -v
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/py-duration)
+
+🐛 [Report issues](https://github.com/philiprehberger/py-duration/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/py-duration/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
