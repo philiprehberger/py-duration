@@ -1,5 +1,9 @@
 # philiprehberger-duration
 
+[![Tests](https://github.com/philiprehberger/py-duration/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-duration/actions/workflows/publish.yml)
+[![PyPI version](https://img.shields.io/pypi/v/philiprehberger-duration.svg)](https://pypi.org/project/philiprehberger-duration/)
+[![License](https://img.shields.io/github/license/philiprehberger/py-duration)](LICENSE)
+
 Parse and format human-readable duration strings like "2h30m" or "1 day, 3 hours".
 
 ## Install
