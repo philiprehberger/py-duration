@@ -90,6 +90,14 @@ td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
 | Seconds | `s`, `sec`, `secs`, `second`, `seconds` |
 | Milliseconds | `ms`, `millisecond`, `milliseconds` |
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
