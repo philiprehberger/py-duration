@@ -6,7 +6,7 @@
 
 Parse and format human-readable duration strings like "2h30m" or "1 day, 3 hours".
 
-## Install
+## Installation
 
 ```bash
 pip install philiprehberger-duration
