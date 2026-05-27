@@ -301,6 +301,21 @@ class Duration:
             milliseconds=ms, microseconds=us,
         )
 
+    @classmethod
+    def from_timedelta(cls, td: timedelta) -> Duration:
+        """Create a Duration from a :class:`datetime.timedelta`.
+
+        Mirrors :meth:`to_timedelta` for round-tripping. Negative timedeltas are
+        preserved via the underlying seconds value.
+
+        Args:
+            td: A :class:`datetime.timedelta` instance.
+
+        Returns:
+            A Duration with decomposed components matching ``td``.
+        """
+        return cls.from_seconds(td.total_seconds())
+
     def __add__(self, other: Duration) -> Duration:
         if not isinstance(other, Duration):
             return NotImplemented

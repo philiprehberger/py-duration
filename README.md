@@ -4,6 +4,8 @@
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-duration.svg)](https://pypi.org/project/philiprehberger-duration/)
 [![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-duration)](https://github.com/philiprehberger/py-duration/commits/main)
 
+![philiprehberger-duration](https://raw.githubusercontent.com/philiprehberger/py-duration/main/package-card.webp)
+
 Parse and format human-readable duration strings like "2h30m" or "1 day, 3 hours".
 
 ## Installation
@@ -91,10 +93,15 @@ str(d)  # "2h 30m"
 ### Timedelta conversion
 
 ```python
+from datetime import timedelta
 from philiprehberger_duration import Duration
 
 d = Duration(hours=1, minutes=30, milliseconds=500)
 td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
+
+# Round-trip from an existing timedelta
+roundtrip = Duration.from_timedelta(td)
+roundtrip == d  # True
 ```
 
 ## API Reference
@@ -108,6 +115,7 @@ td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
 | `Duration.total_seconds() -> float` | Return total duration in seconds. |
 | `Duration.to_timedelta() -> datetime.timedelta` | Convert to a `timedelta` object. |
 | `Duration.from_seconds(s: float) -> Duration` | Create a `Duration` from seconds. |
+| `Duration.from_timedelta(td) -> Duration` | Create a `Duration` from a `datetime.timedelta`. |
 
 ### Supported parse units
 
