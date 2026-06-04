@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-duration"
-version = "0.3.0"
-description = "Parse and format human-readable duration strings like \"2h30m\" or \"1 day, 3 hours\""
+version = "0.4.0"
+description = "Parse and format human-readable duration strings like \"2h30m\" or \"1 day, 3 hours\"."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"

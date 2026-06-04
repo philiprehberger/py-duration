@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 (2026-06-04)
+
+- Add `Duration.total_milliseconds()` and `Duration.total_microseconds()` convenience methods that mirror `total_seconds()`
+- Rename README's `## API Reference` heading to `## API` to match the standardized README template
+- Sync `pyproject.toml` `description` with the README one-liner
+
 ## 0.3.0 (2026-05-26)
 
 - Add `Duration.from_timedelta(td)` classmethod that mirrors `to_timedelta()` for round-tripping a `datetime.timedelta`

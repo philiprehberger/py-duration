@@ -102,9 +102,13 @@ td = d.to_timedelta()  # datetime.timedelta(seconds=5400, microseconds=500000)
 # Round-trip from an existing timedelta
 roundtrip = Duration.from_timedelta(td)
 roundtrip == d  # True
+
+# Total in milliseconds / microseconds
+d.total_milliseconds()  # 5400500.0
+d.total_microseconds()  # 5400500000.0
 ```
 
-## API Reference
+## API
 
 | Function / Class | Description |
 |---|---|
@@ -113,6 +117,8 @@ roundtrip == d  # True
 | `parse(s: str) -> float` | Also accepts ISO 8601 (`"PT2H30M"`) and colon format (`"1:30:00"`). |
 | `Duration` | Dataclass with fields: `weeks`, `days`, `hours`, `minutes`, `seconds`, `milliseconds`, `microseconds`. |
 | `Duration.total_seconds() -> float` | Return total duration in seconds. |
+| `Duration.total_milliseconds() -> float` | Return total duration in milliseconds. |
+| `Duration.total_microseconds() -> float` | Return total duration in microseconds. |
 | `Duration.to_timedelta() -> datetime.timedelta` | Convert to a `timedelta` object. |
 | `Duration.from_seconds(s: float) -> Duration` | Create a `Duration` from seconds. |
 | `Duration.from_timedelta(td) -> Duration` | Create a `Duration` from a `datetime.timedelta`. |

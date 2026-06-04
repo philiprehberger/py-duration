@@ -281,6 +281,22 @@ class Duration:
         )
         return round(total, 6)
 
+    def total_milliseconds(self) -> float:
+        """Return the total duration in milliseconds.
+
+        Convenience method that mirrors :meth:`total_seconds` so callers
+        do not have to write ``duration.total_seconds() * 1000``.
+        """
+        return round(self.total_seconds() * 1000, 3)
+
+    def total_microseconds(self) -> float:
+        """Return the total duration in microseconds.
+
+        Convenience method that mirrors :meth:`total_seconds` so callers
+        do not have to write ``duration.total_seconds() * 1_000_000``.
+        """
+        return round(self.total_seconds() * 1_000_000, 0)
+
     def to_timedelta(self) -> timedelta:
         """Convert to a datetime.timedelta object."""
         return timedelta(seconds=self.total_seconds())
